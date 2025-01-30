@@ -7,4 +7,4 @@ public enum PaymentMethod {
     UPI,
     PAYPAL,
     CASH
-}
+}//paymentMethod
