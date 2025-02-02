@@ -3,6 +3,8 @@ package com.blogs.pojos;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -28,9 +30,11 @@ public class Flight {
     private String arrivalAirport;
 
     @NotNull(message = "Departure time is required")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime deptTime;
 
     @NotNull(message = "Arrival time is required")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime arrivalTime;
 
     @Min(value = 1, message = "Available seats must be at least 1")
