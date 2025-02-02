@@ -103,8 +103,8 @@ docker-compose up --build
 For manual deployment, configure **Spring Boot** on a cloud server and host the **React.js frontend** on a service like **Vercel or Netlify**.
 
 ## 👨‍💻 Contributors
-- **[Your Name]** - Full Stack Developer
-- **[Other Team Members]** (If applicable)
+- **[Pradip Dound]** - Full Stack Developer
+- **[Akash Badak]** - Full Stack Developer
 
 ## 📄 License
 This project is open-source under the **MIT License**.
