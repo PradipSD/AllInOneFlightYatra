@@ -68,5 +68,32 @@ public class FlightServiceImpl implements FlightService {
 	
 	
 	
+    @Override
+    public FlightDTO updateFlight(Long id, FlightDTO flightDTO) {
+        Flight existingFlight = flightRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Flight not found with ID: " + id));
+
+        existingFlight.setAirlineName(flightDTO.getAirlineName());
+        existingFlight.setDeptAirport(flightDTO.getDeptAirport());
+        existingFlight.setArrivalAirport(flightDTO.getArrivalAirport());
+        existingFlight.setDeptTime(flightDTO.getDeptTime());
+        existingFlight.setArrivalTime(flightDTO.getArrivalTime());
+        existingFlight.setAvailableSeats(flightDTO.getAvailableSeats());
+        existingFlight.setPrice(flightDTO.getPrice());
+        existingFlight.setFlightstatus(flightDTO.getFlightStatus());
+
+        Flight updatedFlight = flightRepository.save(existingFlight);
+        return modelMapper.map(updatedFlight, FlightDTO.class);
+    }
+
+ 
+    @Override
+    public void deleteFlight(Long id) {
+        Flight flight = flightRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Flight not found with ID: " + id));
+
+        flightRepository.delete(flight);
+    }
+	
 	
 }

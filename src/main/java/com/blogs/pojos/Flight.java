@@ -47,10 +47,10 @@ public class Flight {
     @NotNull(message = "FlightStatus is required")
     private FlightStatus flightstatus;  
 
-    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<BookingFlight> bookings;
 
-    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Review> reviews;
 
     @ManyToOne

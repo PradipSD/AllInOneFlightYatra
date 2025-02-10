@@ -17,4 +17,8 @@ public interface FlightService {
 
 	List<FlightDTO> searchFlight(String deptAirport, String arrivalAirport, LocalDate deptDate);
 
+	void deleteFlight(Long id);
+
+	FlightDTO updateFlight(Long id, FlightDTO flightDTO);
+
 }

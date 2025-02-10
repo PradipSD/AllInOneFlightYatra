@@ -46,7 +46,7 @@ public class User {
     @NotNull(message = "Role is required")
     private Role role;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<BookingFlight> bookings;
 
 	

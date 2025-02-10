@@ -1,6 +1,7 @@
 package com.blogs.dto;
 
 import com.blogs.pojos.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -29,8 +30,8 @@ public class UserDTO {
 
     @NotBlank(message = "Password is required")
     private String password;
-
+    
+    @JsonIgnore
     private Role role;
-
 //    private List<BookingDTO> bookings;
 }

@@ -39,6 +39,6 @@ public class BookingFlight {
     @JoinColumn(name = "flight_id")
     private Flight flight;
 
-    @OneToOne(mappedBy = "booking", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "booking", cascade = CascadeType.ALL,orphanRemoval = true)
     private Payment payment;
 }

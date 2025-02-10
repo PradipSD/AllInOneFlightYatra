@@ -1,12 +1,19 @@
 package com.blogs.service;
 
 import java.util.List;
-
 import com.blogs.dto.BookingDTO;
-import com.blogs.pojos.BookingFlight;
 
 public interface BookingService {
 
-	List<BookingDTO> getAllBookings();
+    List<BookingDTO> getAllBookings();
+
+    BookingDTO createBooking(BookingDTO bookingDTO);
+
+    BookingDTO updateBooking(Long bookingId, BookingDTO bookingDTO);
+
+    BookingDTO cancelBookingByEmail(String email);
+
+    BookingDTO getBookingByEmail(String email);
+
 
 }
