@@ -10,6 +10,7 @@ import com.blogs.service.BookingService;
 
 import jakarta.validation.Valid;
 
+@CrossOrigin(origins = "http://localhost:3000") 
 @RestController
 @RequestMapping("/api/bookings")
 public class BookingController {

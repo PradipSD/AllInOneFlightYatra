@@ -10,6 +10,7 @@ import com.blogs.service.NearestAirportLocationService;
 
 import jakarta.validation.Valid;
 
+@CrossOrigin(origins = "http://localhost:3000") 
 @RestController
 @RequestMapping("/api/nearest-airports")
 public class NearestAirportLocationController {

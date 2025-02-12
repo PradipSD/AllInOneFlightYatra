@@ -1,6 +1,7 @@
 package com.blogs.pojos;
 
 import jakarta.persistence.*;
+import java.util.List;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
@@ -39,4 +40,7 @@ public class Airline {
     @NotBlank(message = "Website is required")
     @Pattern(regexp = "^(http|https)://.*$", message = "Website must be a valid URL")
     private String website;
+    
+    @OneToMany(mappedBy = "airline", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Flight> flights;
 }

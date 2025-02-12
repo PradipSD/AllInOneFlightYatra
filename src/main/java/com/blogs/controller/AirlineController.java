@@ -3,6 +3,8 @@ package com.blogs.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +17,8 @@ import com.blogs.service.AirlineService;
 
 import jakarta.validation.Valid;
 
+
+@CrossOrigin(origins = "http://localhost:3000") 
 @RestController
 @RequestMapping("/api/airlines")
 public class AirlineController {
@@ -40,7 +44,7 @@ public class AirlineController {
 		return airlineService.updateAirline(id, airlineDTO);
 	}
 
-	@PostMapping("/deleteAirline/{id}")
+	@DeleteMapping("/deleteAirline/{id}")
 	public void deleteAirline(@PathVariable Long id) {
 		 airlineService.deleteAirline(id);
 	}

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:3000") 
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -16,16 +17,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/register/user")
+    @PostMapping("/register")
     public UserDTO registerUser(@Valid @RequestBody UserDTO userDTO) {
         return userService.createUser(userDTO);
     }
 
-    @PostMapping("/register/admin")
-    public UserDTO registerAdmin(@Valid @RequestBody UserDTO userDTO) {
-        return userService.createAdmin(userDTO);
-    }
-    
+
     @PutMapping("/updateUser/{id}")
     public UserDTO updateUser(@PathVariable Long id, @Valid @RequestBody UserDTO userDTO) {
         return userService.updateUser(id, userDTO);
